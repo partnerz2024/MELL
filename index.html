@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="theme-color" content="#1a1a1a" />
+	<meta name="description" content="멜 스튜디오 - 나만의 캐릭터 만들기" />
+	<title>멜 스튜디오</title>
+	
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<!-- 메인 컨테이너 -->
+	<div class="mobile-container">
+		<!-- 최상단: 로고 바 -->
+		<div class="logo-bar">
+			<img src="assets/MELLSTUDIO_LOGO.png" alt="MELL STUDIO" class="logo-img" />
+		</div>
+		
+		<!-- 상단: 캔버스 미리보기 영역 -->
+		<div class="preview-section">
+			<canvas id="canvas"></canvas>
+		</div>
+		
+		<!-- 중간: 탭 네비게이션 -->
+		<div class="tab-navigation">
+			<button class="tab-btn active" data-tab="hair">
+				<span class="tab-label">머리</span>
+			</button>
+			<button class="tab-btn" data-tab="clothes">
+				<span class="tab-label">옷</span>
+			</button>
+			<button class="tab-btn" data-tab="accessory">
+				<span class="tab-label">악세</span>
+			</button>
+			<button class="tab-btn" data-tab="hat">
+				<span class="tab-label">모자</span>
+			</button>
+			<button class="tab-btn" data-tab="background">
+				<span class="tab-label">배경</span>
+			</button>
+			<button class="tab-btn" data-tab="face">
+				<span class="tab-label">얼굴</span>
+			</button>
+		</div>
+		
+		<!-- 하단: 선택 영역 -->
+		<div class="selection-area" id="selectionArea">
+			<!-- 확장/축소 버튼 -->
+			<div class="resize-handle" id="resizeHandle">
+				<div class="resize-icon">⋮⋮</div>
+			</div>
+			<!-- 머리 탭 -->
+			<div class="tab-content active" id="tab-hair">
+				<div id="hairGrid" class="item-grid"></div>
+			</div>
+			
+			<!-- 옷 탭 -->
+			<div class="tab-content" id="tab-clothes">
+				<div id="clothesGrid" class="item-grid"></div>
+			</div>
+			
+			<!-- 액세서리 탭 -->
+			<div class="tab-content" id="tab-accessory">
+				<div id="accessoryGrid" class="item-grid"></div>
+			</div>
+			
+			<!-- 모자 탭 -->
+			<div class="tab-content" id="tab-hat">
+				<div id="hatGrid" class="item-grid"></div>
+			</div>
+			
+			<!-- 배경 탭 -->
+			<div class="tab-content" id="tab-background">
+				<div id="backgroundGrid" class="item-grid"></div>
+			</div>
+			
+			<!-- 얼굴 탭 -->
+			<div class="tab-content" id="tab-face">
+				<div class="face-controls">
+					<div class="face-section">
+						<h4>눈 모양</h4>
+						<div id="eyeGrid" class="item-grid"></div>
+					</div>
+					<div class="face-section">
+						<h4>눈 색상</h4>
+						<div id="eyeColorGrid" class="item-grid small"></div>
+					</div>
+					<div class="face-section">
+						<h4>입</h4>
+						<div id="mouthGrid" class="item-grid small"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 하단 고정 버튼 -->
+		<div class="bottom-actions">
+			<button id="btnRandom" class="action-btn secondary">
+				<span>랜덤</span>
+			</button>
+			<button id="btnSave" class="action-btn primary">
+				<span>저장하기</span>
+			</button>
+		</div>
+	</div>
+	
+	<!-- 로딩 인디케이터 -->
+	<div id="loading" class="loading-screen">
+		<div class="loading-spinner"></div>
+		<p>캐릭터 로딩 중...</p>
+	</div>
+	
+	<script src="app.js"></script>
+</body>
+</html>
